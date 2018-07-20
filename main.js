@@ -50,6 +50,11 @@ btn2.addEventListener("click", function() { //if i click btn2
 // Reset
 
 rst.addEventListener("click", function() { //if i click reset button
+	reset();
+});
+
+// Reset Function (dry code)
+function reset() {
 	p1Score = 0;	//internal score playerOne is 0
 	p2Score = 0;	//internal score playerTwo is 0
 	playerOne.innerHTML = 0;	//innerHTML score playerOne is 0
@@ -57,12 +62,13 @@ rst.addEventListener("click", function() { //if i click reset button
 	playerOne.classList.remove("winner");	//remove green playerOne	
 	playerTwo.classList.remove("winner");	//remove green playerTwo
 	winnerIs.innerHTML = "No one yet..";	//change winneris to NO ONE YET...
-});
+};
 
 
 
 //winningScoreDisplay
 input.addEventListener("change", function() { // value changes when we input
-	winningScoreDisplay.innerHTML = input.value; //score display changes when we input value
-	winningScore = Number(input.value); // winningScore eequal to set value and turn into number not string!
+	winningScoreDisplay.innerHTML = input.value; //score display changes when we input value becomes string!
+	winningScore = Number(input.value); // winningScore equal to set value and turn into number!
+	reset();
 });

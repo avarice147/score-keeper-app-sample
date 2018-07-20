@@ -4,12 +4,9 @@ var btn2 = document.querySelectorAll("button")[1];
 var rst = document.querySelectorAll("button")[2];
 var gameOver = false;
 
-
 // h1 and other DISPLAYS
 var playerOne = document.querySelector("#playerOne");
 var playerTwo = document.querySelector("#playerTwo");
-
-
 
 // internal JS numbers and GAME OVER
 var p1Score = 0;
@@ -17,11 +14,11 @@ var p2Score = 0;
 var rstScore = 0;
 var winningScore = 5;
 
-
-
+// WinningScore
+var input = document.querySelector("input");
+var winningScoreDisplay = document.querySelector("p span");
 
 // playerOne side
-
 btn1.addEventListener("click", function() { //if i click btn1
 		if(!gameOver) {						//if not 5 or gameOver, add 1 internal / innerHTML
 			p1Score++;
@@ -64,18 +61,8 @@ rst.addEventListener("click", function() { //if i click reset button
 
 
 
-// change background
-
-
-var winnerIs = document.querySelector("#winnerIs");
-var isPurple = false;
-
-winnerIs.addEventListener("click", function() {
-	if(!isPurple) {
-		document.body.style.background = "white";
-	} else {
-		document.body.style.background = "purple";
-	}
-	
+//winningScoreDisplay
+input.addEventListener("change", function() { // value changes when we input
+	winningScoreDisplay.innerHTML = input.value; //score display changes when we input value
+	winningScore = Number(input.value); // winningScore eequal to set value and turn into number not string!
 });
-
